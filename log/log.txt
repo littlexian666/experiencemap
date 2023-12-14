@@ -1,0 +1,443 @@
+2023-12-11 20:47:23,179 Business.py: INFO: /business/getContent req content： module='hsh' content='null'
+2023-12-11 20:47:23,196 Business.py: ERROR: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Business.py", line 42, in get_content
+    res_data = RedisHandler.get_all_from_z_set(Constant.business_key + module)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 8, in get_all_from_z_set
+    return r.zrange(key, 0, -1)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4507, in zrange
+    return self._zrange(
+           ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4459, in _zrange
+    return self.execute_command(*pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 1086, in get_connection
+    connection.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+2023-12-11 20:48:12,886 Business.py: INFO: /business/getContent req content： module='hsh' content='null'
+2023-12-11 20:48:12,889 Business.py: INFO: res:[]
+2023-12-11 20:48:12,889 Business.py: INFO: cost:0.0033369064331054688
+2023-12-11 20:48:25,888 Business.py: INFO: /business/getContent req content： module='hsh' content='null'
+2023-12-11 20:48:34,352 Business.py: INFO: res:[]
+2023-12-11 20:48:34,353 Business.py: INFO: cost:8.46526288986206
+2023-12-11 20:49:26,136 Business.py: INFO: /business/pushContent req content： module='hsh' content='1'
+2023-12-11 20:49:26,146 Business.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Business.py", line 59, in push_content
+    RedisHandler.set_data_to_z_set(Constant.business_key + module, content, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 12, in set_data_to_z_set
+    r.zadd(key, data)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4167, in zadd
+    for pair in mapping.items():
+                ^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'items'
+
+2023-12-11 20:59:02,967 Business.py: INFO: /business/pushContent req content： module='hsh' content='1'
+2023-12-11 20:59:08,057 Business.py: INFO: /business/getContent req content： module='hsh' content='1'
+2023-12-11 20:59:08,058 Business.py: INFO: res:[b'1']
+2023-12-11 20:59:08,058 Business.py: INFO: cost:0.0008630752563476562
+2023-12-11 22:09:47,808 Model.py: INFO: test_qa req content： content='1'
+2023-12-11 22:09:47,809 Model.py: INFO: res:<Vo.Score object at 0x1119e8190>
+2023-12-11 22:09:47,809 Model.py: INFO: cost:0.0013167858123779297
+2023-12-11 22:12:43,661 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:12:43,677 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 13, in set_data_to_z_set
+    r.zadd(key, {data: score})
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4170, in zadd
+    return self.execute_command("ZADD", name, *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'ExperienceRecord'. Convert to a bytes, string, int or float first.
+
+2023-12-11 22:14:30,098 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:14:30,103 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:<Entity.ExperienceRecord object at 0x11b5cf650>,score:1702304070.1037388
+2023-12-11 22:14:30,112 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 15, in set_data_to_z_set
+    r.zadd(key, {data: score})
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4170, in zadd
+    return self.execute_command("ZADD", name, *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'ExperienceRecord'. Convert to a bytes, string, int or float first.
+
+2023-12-11 22:15:35,747 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:15:35,758 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 16, in set_data_to_z_set
+    data = json.dumps(data)
+           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ExperienceRecord is not JSON serializable
+
+2023-12-11 22:15:50,974 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:15:50,982 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 16, in set_data_to_z_set
+    data = json.loads(data)
+           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not ExperienceRecord
+
+2023-12-11 22:16:53,626 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:16:53,638 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 16, in set_data_to_z_set
+    temp = json.dumps(data)
+           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ExperienceRecord is not JSON serializable
+
+2023-12-11 22:19:08,548 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:19:08,559 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 16, in set_data_to_z_set
+    temp = json.dump(data)
+           ^^^^^^^^^^^^^^^
+TypeError: dump() missing 1 required positional argument: 'fp'
+
+2023-12-11 22:19:41,024 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:19:41,036 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 16, in set_data_to_z_set
+    temp = json.dumps(data)
+           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ExperienceRecord is not JSON serializable
+
+2023-12-11 22:24:18,156 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:24:18,163 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:{"record_id": 8, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304658.163428},score:1702304658.163438
+2023-12-11 22:24:18,173 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 18, in set_data_to_z_set
+    r.zadd(key, {data: score})
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4170, in zadd
+    return self.execute_command("ZADD", name, *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'ExperienceRecord'. Convert to a bytes, string, int or float first.
+
+2023-12-11 22:24:37,206 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:24:39,953 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:{"record_id": 9, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304677.206878},score:1702304677.206887
+2023-12-11 22:24:39,959 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 18, in set_data_to_z_set
+    r.zadd(key, {data: score})
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4170, in zadd
+    return self.execute_command("ZADD", name, *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'ExperienceRecord'. Convert to a bytes, string, int or float first.
+
+2023-12-11 22:24:46,094 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:25:02,774 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:{"record_id": 10, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304686.095617},score:1702304686.0956328
+2023-12-11 22:25:02,779 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 60, in user_qa
+    RedisHandler.set_data_to_z_set(Constant.user_data_key + req.user_id, redis_data, time.time())
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 18, in set_data_to_z_set
+    r.zadd(key, {data: score})
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 4170, in zadd
+    return self.execute_command("ZADD", name, *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'ExperienceRecord'. Convert to a bytes, string, int or float first.
+
+2023-12-11 22:25:39,394 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:25:39,400 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:{"record_id": 11, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304739.4000902},score:1702304739.400106
+2023-12-11 22:25:39,402 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 11, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304739.4000902},score:1702304739.402165
+2023-12-11 22:25:39,402 RedisHandler.py: INFO: hset key:score_data,data:11,score:<Vo.Score object at 0x1110c89d0>
+2023-12-11 22:25:39,410 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Model.py", line 63, in user_qa
+    RedisHandler.hset(Constant.score_data_key, record_id, res_data)
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/RedisHandler.py", line 27, in hset
+    r.hset(key, field, value)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/commands/core.py", line 5019, in hset
+    return self.execute_command("HSET", name, *items)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'Score'. Convert to a bytes, string, int or float first.
+
+2023-12-11 22:26:17,089 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:26:17,094 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:{"record_id": 12, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304777.09471},score:1702304777.09473
+2023-12-11 22:26:17,095 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 12, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702304777.09471},score:1702304777.095808
+2023-12-11 22:26:17,097 RedisHandler.py: INFO: hset key:score_data,data:12,score:{"score": 1, "summary": "\u54c8\u54c8\u54c8"}
+2023-12-11 22:26:17,097 Model.py: INFO: cost:0.008784770965576172
+2023-12-11 22:30:36,054 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:30:36,056 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:30:36,062 ExperiencePage.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/ExperiencePage.py", line 35, in get_content_each
+    record_id = data.get('record_id') or 0
+                ^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'get'
+
+2023-12-11 22:30:43,879 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:30:43,879 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:30:43,880 ExperiencePage.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/ExperiencePage.py", line 35, in get_content_each
+    record_id = data.get('record_id') or 0
+                ^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'get'
+
+2023-12-11 22:34:58,980 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:35:02,016 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:36:53,147 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:36:56,199 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:37:59,316 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:38:11,009 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:38:26,760 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:39:37,313 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:39:37,314 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:39:37,317 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:39:37,318 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:39:37,318 ExperiencePage.py: INFO: res:['{"record_id": 11, "user_id": "123", "flow_path": "\\u53bb\\u652f\\u4ed8", "scene": "\\u610f\\u89c1\\u53cd\\u9988", "content": "\\u5c31\\u8fd9", "create_time": 1702304739.4000902}', '{"record_id": 12, "user_id": "123", "flow_path": "\\u53bb\\u652f\\u4ed8", "scene": "\\u610f\\u89c1\\u53cd\\u9988", "content": "\\u5c31\\u8fd9", "create_time": 1702304777.09471}']
+2023-12-11 22:39:37,318 ExperiencePage.py: INFO: cost:0.004729032516479492
+2023-12-11 22:41:04,769 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:41:04,770 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:41:04,777 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:41:04,777 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:41:04,778 ExperiencePage.py: INFO: res:[]
+2023-12-11 22:41:04,778 ExperiencePage.py: INFO: cost:0.009003162384033203
+2023-12-11 22:41:22,976 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:41:26,064 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:41:29,003 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:41:32,888 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:42:36,541 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:42:36,542 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:42:36,547 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:42:36,548 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:42:36,549 ExperiencePage.py: INFO: res:[]
+2023-12-11 22:42:36,549 ExperiencePage.py: INFO: cost:0.008198022842407227
+2023-12-11 22:43:01,645 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:43:01,645 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:43:01,651 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:43:01,651 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:43:01,654 ExperiencePage.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/ExperiencePage.py", line 40, in get_content_each
+    data['score'] = model_result['score']
+                    ~~~~~~~~~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+2023-12-11 22:43:54,905 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:43:54,905 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:43:54,911 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:43:54,912 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:43:54,913 ExperiencePage.py: INFO: res:['record_id', 'user_id', 'flow_path', 'scene', 'content', 'create_time', 'score', 'summary']
+2023-12-11 22:43:54,913 ExperiencePage.py: INFO: cost:0.007876157760620117
+2023-12-11 22:44:23,441 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:44:23,442 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:44:23,448 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:44:23,448 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:44:23,449 ExperiencePage.py: INFO: res:[{'record_id': 12, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702304777.09471, 'score': 1, 'summary': '哈哈哈'}]
+2023-12-11 22:44:23,449 ExperiencePage.py: INFO: cost:0.00781702995300293
+2023-12-11 22:44:33,840 Model.py: INFO: user_qa req content： content='就这' user_id='123' flow_path='去支付' scene='意见反馈'
+2023-12-11 22:44:33,842 RedisHandler.py: INFO: set_data_to_z_set key:user_data:123,data:{"record_id": 13, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702305873.842001},score:1702305873.8420339
+2023-12-11 22:44:33,843 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 13, "user_id": "123", "flow_path": "\u53bb\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5c31\u8fd9", "create_time": 1702305873.842001},score:1702305873.843064
+2023-12-11 22:44:33,844 RedisHandler.py: INFO: hset key:score_data,data:13,score:{"score": 1, "summary": "\u54c8\u54c8\u54c8"}
+2023-12-11 22:44:33,844 Model.py: INFO: cost:0.004142045974731445
+2023-12-11 22:44:35,853 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:44:35,854 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:44:35,854 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:44:35,855 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:44:35,856 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-11 22:44:35,857 ExperiencePage.py: INFO: res:[{'record_id': 12, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702304777.09471, 'score': 1, 'summary': '哈哈哈'}, {'record_id': 13, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702305873.842001, 'score': 1, 'summary': '哈哈哈'}]
+2023-12-11 22:44:35,857 ExperiencePage.py: INFO: cost:0.003883838653564453
+2023-12-11 22:44:52,719 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-11 22:44:52,719 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:44:52,720 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:44:52,721 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:44:52,722 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-11 22:44:52,722 ExperiencePage.py: INFO: res:[{'record_id': 12, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702304777.09471, 'score': 1, 'summary': '哈哈哈'}, {'record_id': 13, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702305873.842001, 'score': 1, 'summary': '哈哈哈'}]
+2023-12-11 22:44:52,723 ExperiencePage.py: INFO: cost:0.0041217803955078125
+2023-12-11 22:45:44,503 Business.py: INFO: /business/pushContent req content： module='hsh' content='1'
+2023-12-11 22:45:44,504 RedisHandler.py: INFO: set_data_to_z_set key:business_key:hsh,data:"1",score:1702305944.504004
+2023-12-11 22:45:44,508 Business.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/fastApiProject/Business.py", line 60, in push_content
+    RedisHandler.set_data_to_z_set()
+TypeError: set_data_to_z_set() missing 3 required positional arguments: 'key', 'data', and 'score'
+
+2023-12-11 22:47:23,190 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-11 22:47:23,190 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:47:23,224 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:47:23,224 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:47:23,225 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-11 22:47:23,225 ExperiencePage.py: INFO: res:{'去支付': <Vo.ExperienceResult object at 0x1061d7a10>}
+2023-12-11 22:47:23,225 ExperiencePage.py: INFO: cost:0.03510594367980957
+2023-12-11 22:50:18,234 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-11 22:50:18,234 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:50:18,236 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:50:18,237 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:50:18,238 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-11 22:52:45,501 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-11 22:52:45,502 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-11 22:52:45,506 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-11 22:52:45,507 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-11 22:52:45,507 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-11 22:53:06,532 ExperiencePage.py: INFO: res:{'去支付': <Vo.ExperienceResult object at 0x1078f36d0>}
+2023-12-11 22:53:06,987 ExperiencePage.py: INFO: cost:21.486685276031494
