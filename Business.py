@@ -6,13 +6,17 @@ import time
 import RedisHandler
 import Constant
 from main import app
+import json
 
 
 # 入参
 class Req(BaseModel):
     # 模块
     module: str
-    content: str
+    content: dict
+class Req1(BaseModel):
+    # 模块
+    module: str
 
 
 app.add_middleware(
@@ -34,19 +38,50 @@ app.add_middleware(
 
 
 @app.post("/business/getContent")
-async def get_content(req: Req):
+async def get_content(req: Req1):
     start = time.time()
     logger.info(f'/business/getContent req content： {req}')
     module = req.module
     try:
         res_data = RedisHandler.get_all_from_z_set(Constant.business_key + module)
-        logger.info(f"res:{res_data}")
-        logger.info(f"cost:{time.time() - start}")
 
-        return {"code": 200, "message": "success", "result": res_data}
+        res = []
+        for data in res_data:
+            data = json.loads(data)
+            res.append(data)
+        logger.info(f"res:{res}")
+        logger.info(f"cost:{time.time() - start}")
+        return {"code": "00000", "message": "success", "data": res}
     except Exception as e:
         logger.error(traceback.format_exc())
-        return {"code": 500, "message": traceback.format_exc(), "result": "Error"}
+        return {"code": 500, "message": traceback.format_exc(), "data": "Error"}
+
+
+#
+@app.post("/business/getModuleList")
+async def getModuleList():
+    start = time.time()
+    logger.info(f'/experience/getContent/getModuleList req')
+
+    # todo: 校验参数
+    try:
+        res = []
+        for key in Constant.module_to_name.keys():
+            value = Constant.module_to_name.get(key)
+            obj = {
+                "module": key,
+                "moduleName": value
+            }
+            res.append(obj)
+        # todo: 实现
+
+        logger.info(f"res:{res}")
+        logger.info(f"cost:{time.time() - start}")
+
+        return {"code": "00000", "message": "success", "data": res}
+    except Exception as e:
+        logger.error(traceback.format_exc())
+        return {"code": 500, "message": traceback.format_exc(), "data": "Error"}
 
 
 @app.post("/business/pushContent")
@@ -56,9 +91,16 @@ async def push_content(req: Req):
     module = req.module
     content = req.content
     try:
+
+        res_data = RedisHandler.get_all_from_z_set(Constant.business_key + module)
+
+        for data in res_data:
+            data = json.loads(data)
+            if data['record_id'] == content['record_id']:
+                return {"code": "00000", "message": "已经推送过了"}
         RedisHandler.set_data_to_z_set(Constant.business_key + module, content, time.time())
-        RedisHandler.set_data_to_z_set()
-        return {"code": 200, "message": "success"}
+        return {"code": "00000", "message": "success"}
     except Exception as e:
         logger.error(traceback.format_exc())
-        return {"code": 500, "message": traceback.format_exc(), "result": "Error"}
+        return {"code": 500, "message": traceback.format_exc(), "data": "Error"}
+

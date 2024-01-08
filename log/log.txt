@@ -441,3 +441,1221 @@ TypeError: set_data_to_z_set() missing 3 required positional arguments: 'key', '
 2023-12-11 22:52:45,507 RedisHandler.py: INFO: hget key:score_data,data:13
 2023-12-11 22:53:06,532 ExperiencePage.py: INFO: res:{'去支付': <Vo.ExperienceResult object at 0x1078f36d0>}
 2023-12-11 22:53:06,987 ExperiencePage.py: INFO: cost:21.486685276031494
+2023-12-18 16:09:02,374 Model.py: INFO: test_qa req content： content='1'
+2023-12-18 16:09:02,375 Model.py: INFO: res:<Vo.Score object at 0x1048e3910>
+2023-12-18 16:09:02,375 Model.py: INFO: cost:0.0019168853759765625
+2023-12-18 16:10:26,693 ExperiencePage.py: INFO: /experience/getContent/each req 
+2023-12-18 16:10:26,693 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-18 16:10:26,704 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-18 16:10:26,705 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-18 16:10:26,706 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-18 16:10:26,707 ExperiencePage.py: INFO: res:[{'record_id': 12, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702304777.09471, 'score': 1, 'summary': '哈哈哈'}, {'record_id': 13, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702305873.842001, 'score': 1, 'summary': '哈哈哈'}]
+2023-12-18 16:10:26,707 ExperiencePage.py: INFO: cost:0.014652013778686523
+2023-12-19 17:19:07,387 Model.py: INFO: test_qa req content： content='1'
+2023-12-19 17:19:07,513 Model.py: INFO: res:{}
+2023-12-19 17:19:07,514 Model.py: INFO: cost:0.12700200080871582
+2023-12-19 17:19:41,885 Model.py: INFO: test_qa req content： content='你小子在干嘛啊'
+2023-12-19 17:19:41,952 Model.py: INFO: res:{}
+2023-12-19 17:19:41,952 Model.py: INFO: cost:0.06690692901611328
+2023-12-19 17:21:18,614 Model.py: INFO: test_qa req content： content='你小子在干嘛啊'
+2023-12-19 17:21:18,623 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 60, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 34, in qa
+    response = requests.post('http://36.137.226.16:11139/v1/chat/completions', data=json.dumps(req),headers=headers)
+                                                                                    ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+
+2023-12-19 17:23:54,146 Model.py: INFO: test_qa req content： content='你小子在干嘛啊'
+2023-12-19 17:23:55,071 Model.py: INFO: res:{}
+2023-12-19 17:23:55,071 Model.py: INFO: cost:0.9251968860626221
+2023-12-19 17:24:18,542 Model.py: INFO: test_qa req content： content='垃圾保险，真是服了'
+2023-12-19 17:24:19,416 Model.py: INFO: res:{}
+2023-12-19 17:24:19,417 Model.py: INFO: cost:0.874985933303833
+2023-12-19 17:30:34,677 Model.py: INFO: test_qa req content： content='垃圾保险，真是服了'
+2023-12-19 17:30:35,605 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 64, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 37, in qa
+    res = json.loads(response.json())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+
+2023-12-19 17:31:55,386 Model.py: INFO: test_qa req content： content='垃圾保险，真是服了'
+2023-12-19 17:31:56,255 Model.py: INFO: res:{'score': 1, 'summary': '垃圾保险，真是服了'}
+2023-12-19 17:31:56,256 Model.py: INFO: cost:0.8701272010803223
+2023-12-19 17:32:13,600 Model.py: INFO: test_qa req content： content='你这个东西真的很难用哎'
+2023-12-19 17:32:14,589 Model.py: INFO: res:{'score': 3, 'summary': '产品难以使用'}
+2023-12-19 17:32:14,590 Model.py: INFO: cost:0.989555835723877
+2023-12-20 22:54:32,028 Model.py: INFO: user_qa req content： content='整体还是不错的，就是有一些服务不太好' user_id='333' flow_path='评价' scene='意见反馈'
+2023-12-20 22:54:32,030 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-20 22:54:33,338 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 14, "user_id": "333", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703084073.338079},score:1703084073.338134
+2023-12-20 22:54:33,340 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 14, "user_id": "333", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703084073.338079},score:1703084073.339936
+2023-12-20 22:54:33,340 RedisHandler.py: INFO: hset key:score_data,data:14,score:{"score": 3, "summary": "\u670d\u52a1\u4e0d\u597d"}
+2023-12-20 22:54:33,341 Model.py: INFO: cost:1.3126749992370605
+2023-12-20 22:54:38,078 Model.py: INFO: user_qa req content： content='整体还是不错的，就是有一些服务不太好' user_id='111' flow_path='评价' scene='意见反馈'
+2023-12-20 22:54:38,079 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-20 22:54:38,856 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 15, "user_id": "111", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703084078.856823},score:1703084078.85683
+2023-12-20 22:54:38,857 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 15, "user_id": "111", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703084078.856823},score:1703084078.857522
+2023-12-20 22:54:38,858 RedisHandler.py: INFO: hset key:score_data,data:15,score:{"score": 3, "summary": "\u670d\u52a1\u4e0d\u597d"}
+2023-12-20 22:54:38,859 Model.py: INFO: cost:0.7807891368865967
+2023-12-20 22:54:43,827 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 22:54:43,828 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 22:54:43,828 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 22:54:43,829 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 22:54:43,829 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 22:54:43,829 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 22:54:43,830 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 22:54:43,830 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x104787210>, <Vo.ExperienceResult object at 0x104785c90>]
+2023-12-20 22:54:43,830 ExperiencePage.py: INFO: cost:0.0026357173919677734
+2023-12-20 22:59:10,886 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 22:59:10,887 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 22:59:10,893 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 22:59:10,894 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 22:59:10,895 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 22:59:10,895 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 22:59:10,895 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 22:59:10,896 ExperiencePage.py: INFO: group_list： [{'record_id': 12, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702304777.09471, 'score': 1, 'summary': '哈哈哈'}, {'record_id': 13, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702305873.842001, 'score': 1, 'summary': '哈哈哈'}]
+2023-12-20 22:59:10,896 ExperiencePage.py: INFO: group_list： [{'record_id': 14, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703084073.338079, 'score': 3, 'summary': '服务不好'}, {'record_id': 15, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703084078.856823, 'score': 3, 'summary': '服务不好'}]
+2023-12-20 22:59:10,896 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x1040d5610>, <Vo.ExperienceResult object at 0x103ff9f50>]
+2023-12-20 22:59:10,896 ExperiencePage.py: INFO: cost:0.010479927062988281
+2023-12-20 23:29:19,490 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 23:29:19,491 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 23:29:19,496 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 23:29:19,496 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 23:29:19,497 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 23:29:19,497 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 23:29:19,497 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 23:29:19,500 ExperiencePage.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/ExperiencePage.py", line 137, in get_content
+    for key, group in groups:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+
+2023-12-20 23:30:08,727 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 23:30:08,728 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 23:30:08,734 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 23:30:08,734 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 23:30:08,734 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 23:30:08,734 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 23:30:08,735 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 23:30:08,735 ExperiencePage.py: INFO: group_list： None
+2023-12-20 23:30:08,736 ExperiencePage.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/ExperiencePage.py", line 140, in get_content
+    score_list = [int(item['score']) for item in group_list]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+2023-12-20 23:30:37,914 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 23:30:37,914 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 23:30:37,921 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 23:30:37,921 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 23:30:37,922 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 23:30:37,923 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 23:30:37,923 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 23:31:08,510 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 23:31:08,510 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 23:31:08,524 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 23:31:08,524 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 23:31:08,525 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 23:31:08,525 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 23:31:08,525 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 23:31:28,073 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-20 23:31:28,074 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-20 23:31:28,080 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-20 23:31:28,080 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-20 23:31:28,081 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-20 23:31:28,081 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-20 23:31:28,082 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-20 23:31:28,082 ExperiencePage.py: INFO: group_list： [{'record_id': 12, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702304777.09471, 'score': 1, 'summary': '哈哈哈'}, {'record_id': 13, 'user_id': '123', 'flow_path': '去支付', 'scene': '意见反馈', 'content': '就这', 'create_time': 1702305873.842001, 'score': 1, 'summary': '哈哈哈'}]
+2023-12-20 23:31:28,082 ExperiencePage.py: INFO: group_list： [{'record_id': 14, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703084073.338079, 'score': 3, 'summary': '服务不好'}, {'record_id': 15, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703084078.856823, 'score': 3, 'summary': '服务不好'}]
+2023-12-20 23:31:28,083 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x106dde250>, <Vo.ExperienceResult object at 0x106ddc3d0>]
+2023-12-20 23:31:28,083 ExperiencePage.py: INFO: cost:0.009917974472045898
+2023-12-25 23:48:10,855 Model.py: INFO: test_qa req content： content='你们服务真好'
+2023-12-25 23:48:14,366 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-25 23:48:14,366 Model.py: INFO: cost:3.5113799571990967
+2023-12-25 23:49:02,160 Model.py: INFO: test_qa req content： content='你真的很专业'
+2023-12-25 23:49:03,414 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 65, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-25 23:51:03,623 Model.py: INFO: user_qa req content： content='你们这个平台好大啊' user_id='111' flow_path='触达' scene='电话'
+2023-12-25 23:51:03,625 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:51:04,488 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 1, "user_id": "111", "flow_path": "\u89e6\u8fbe", "scene": "\u7535\u8bdd", "content": "\u4f60\u4eec\u8fd9\u4e2a\u5e73\u53f0\u597d\u5927\u554a", "create_time": 1703519464.4878201},score:1703519464.487909
+2023-12-25 23:51:04,490 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 1, "user_id": "111", "flow_path": "\u89e6\u8fbe", "scene": "\u7535\u8bdd", "content": "\u4f60\u4eec\u8fd9\u4e2a\u5e73\u53f0\u597d\u5927\u554a", "create_time": 1703519464.4878201},score:1703519464.4900758
+2023-12-25 23:51:04,490 RedisHandler.py: INFO: hset key:score_data,data:1,score:{"score": 4, "summary": "\u5e73\u53f0\u5927"}
+2023-12-25 23:51:04,491 Model.py: INFO: cost:0.8682329654693604
+2023-12-25 23:51:11,397 Model.py: INFO: user_qa req content： content='怎么这么贵啊' user_id='111' flow_path='报价' scene='在线客服'
+2023-12-25 23:51:11,397 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:51:12,154 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 2, "user_id": "111", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u600e\u4e48\u8fd9\u4e48\u8d35\u554a", "create_time": 1703519472.1546109},score:1703519472.1546319
+2023-12-25 23:51:12,156 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 2, "user_id": "111", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u600e\u4e48\u8fd9\u4e48\u8d35\u554a", "create_time": 1703519472.1546109},score:1703519472.156136
+2023-12-25 23:51:12,157 RedisHandler.py: INFO: hset key:score_data,data:2,score:{"score": 3, "summary": "\u4fdd\u8d39\u592a\u8d35"}
+2023-12-25 23:51:12,157 Model.py: INFO: cost:0.760610818862915
+2023-12-25 23:51:19,091 Model.py: INFO: user_qa req content： content='这个流程也太复杂了' user_id='111' flow_path='支付' scene='意见反馈'
+2023-12-25 23:51:19,091 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:51:19,797 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 3, "user_id": "111", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u8fd9\u4e2a\u6d41\u7a0b\u4e5f\u592a\u590d\u6742\u4e86", "create_time": 1703519479.796837},score:1703519479.7968519
+2023-12-25 23:51:19,798 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 3, "user_id": "111", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u8fd9\u4e2a\u6d41\u7a0b\u4e5f\u592a\u590d\u6742\u4e86", "create_time": 1703519479.796837},score:1703519479.7982569
+2023-12-25 23:51:19,798 RedisHandler.py: INFO: hset key:score_data,data:3,score:{"score": 3, "summary": "\u6d41\u7a0b\u590d\u6742"}
+2023-12-25 23:51:19,800 Model.py: INFO: cost:0.7091639041900635
+2023-12-25 23:51:33,361 Model.py: INFO: user_qa req content： content='好多服务，真好' user_id='111' flow_path='服务使用' scene='意见反馈'
+2023-12-25 23:51:33,362 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:51:33,944 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 4, "user_id": "111", "flow_path": "\u670d\u52a1\u4f7f\u7528", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u597d\u591a\u670d\u52a1\uff0c\u771f\u597d", "create_time": 1703519493.9443069},score:1703519493.944321
+2023-12-25 23:51:33,945 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 4, "user_id": "111", "flow_path": "\u670d\u52a1\u4f7f\u7528", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u597d\u591a\u670d\u52a1\uff0c\u771f\u597d", "create_time": 1703519493.9443069},score:1703519493.9456892
+2023-12-25 23:51:33,946 RedisHandler.py: INFO: hset key:score_data,data:4,score:{"score": 4, "summary": ""}
+2023-12-25 23:51:33,946 Model.py: INFO: cost:0.5856239795684814
+2023-12-25 23:51:44,541 Model.py: INFO: user_qa req content： content='太慢了吧，赶紧给我搞啊' user_id='111' flow_path='报案' scene='意见反馈'
+2023-12-25 23:51:44,542 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:51:45,297 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 5, "user_id": "111", "flow_path": "\u62a5\u6848", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u592a\u6162\u4e86\u5427\uff0c\u8d76\u7d27\u7ed9\u6211\u641e\u554a", "create_time": 1703519505.2973812},score:1703519505.29739
+2023-12-25 23:51:45,298 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 5, "user_id": "111", "flow_path": "\u62a5\u6848", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u592a\u6162\u4e86\u5427\uff0c\u8d76\u7d27\u7ed9\u6211\u641e\u554a", "create_time": 1703519505.2973812},score:1703519505.298423
+2023-12-25 23:51:45,299 RedisHandler.py: INFO: hset key:score_data,data:5,score:{"score": 3, "summary": "\u670d\u52a1\u54cd\u5e94\u901f\u5ea6\u6162"}
+2023-12-25 23:51:45,300 Model.py: INFO: cost:0.7589161396026611
+2023-12-25 23:51:51,805 Model.py: INFO: user_qa req content： content='整体还是不错的，就是有一些服务不太好' user_id='111' flow_path='评价' scene='意见反馈'
+2023-12-25 23:51:51,805 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:51:52,465 RedisHandler.py: INFO: set_data_to_z_set key:user_data:111,data:{"record_id": 6, "user_id": "111", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703519512.464894},score:1703519512.4649081
+2023-12-25 23:51:52,466 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 6, "user_id": "111", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703519512.464894},score:1703519512.466327
+2023-12-25 23:51:52,466 RedisHandler.py: INFO: hset key:score_data,data:6,score:{"score": 3, "summary": "\u670d\u52a1\u4f53\u9a8c\u4e00\u822c"}
+2023-12-25 23:51:52,467 Model.py: INFO: cost:0.6620669364929199
+2023-12-25 23:51:59,512 Model.py: INFO: user_qa req content： content='你们这个平台好小啊' user_id='333' flow_path='触达' scene='电话'
+2023-12-25 23:51:59,513 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:00,304 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 7, "user_id": "333", "flow_path": "\u89e6\u8fbe", "scene": "\u7535\u8bdd", "content": "\u4f60\u4eec\u8fd9\u4e2a\u5e73\u53f0\u597d\u5c0f\u554a", "create_time": 1703519520.304328},score:1703519520.304348
+2023-12-25 23:52:00,305 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 7, "user_id": "333", "flow_path": "\u89e6\u8fbe", "scene": "\u7535\u8bdd", "content": "\u4f60\u4eec\u8fd9\u4e2a\u5e73\u53f0\u597d\u5c0f\u554a", "create_time": 1703519520.304328},score:1703519520.3056152
+2023-12-25 23:52:00,306 RedisHandler.py: INFO: hset key:score_data,data:7,score:{"score": 3, "summary": "\u5e73\u53f0\u592a\u5c0f\uff0c\u9009\u62e9\u6709\u9650"}
+2023-12-25 23:52:00,306 Model.py: INFO: cost:0.7940869331359863
+2023-12-25 23:52:05,952 Model.py: INFO: user_qa req content： content='怎么这么便宜' user_id='333' flow_path='报价' scene='在线客服'
+2023-12-25 23:52:05,953 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:06,732 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 8, "user_id": "333", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u600e\u4e48\u8fd9\u4e48\u4fbf\u5b9c", "create_time": 1703519526.7324102},score:1703519526.732424
+2023-12-25 23:52:06,733 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 8, "user_id": "333", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u600e\u4e48\u8fd9\u4e48\u4fbf\u5b9c", "create_time": 1703519526.7324102},score:1703519526.733602
+2023-12-25 23:52:06,734 RedisHandler.py: INFO: hset key:score_data,data:8,score:{"score": 3, "summary": "\u4ef7\u683c\u4f4e\u5ec9\u53ef\u80fd\u5f15\u53d1\u8d28\u91cf\u62c5\u5fe7"}
+2023-12-25 23:52:06,735 Model.py: INFO: cost:0.7831969261169434
+2023-12-25 23:52:12,489 Model.py: INFO: user_qa req content： content='这个流程也太复杂了' user_id='333' flow_path='支付' scene='意见反馈'
+2023-12-25 23:52:12,490 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:13,480 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 93, in user_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-25 23:52:18,094 Model.py: INFO: user_qa req content： content='这个流程也太复杂了' user_id='333' flow_path='支付' scene='意见反馈'
+2023-12-25 23:52:18,094 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:18,894 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 9, "user_id": "333", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u8fd9\u4e2a\u6d41\u7a0b\u4e5f\u592a\u590d\u6742\u4e86", "create_time": 1703519538.894151},score:1703519538.894167
+2023-12-25 23:52:18,895 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 9, "user_id": "333", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u8fd9\u4e2a\u6d41\u7a0b\u4e5f\u592a\u590d\u6742\u4e86", "create_time": 1703519538.894151},score:1703519538.895036
+2023-12-25 23:52:18,896 RedisHandler.py: INFO: hset key:score_data,data:9,score:{"score": 3, "summary": "\u6d41\u7a0b\u590d\u6742"}
+2023-12-25 23:52:18,897 Model.py: INFO: cost:0.8031690120697021
+2023-12-25 23:52:25,859 Model.py: INFO: user_qa req content： content='服务挺多挺方便' user_id='333' flow_path='服务使用' scene='意见反馈'
+2023-12-25 23:52:25,859 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:26,562 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 10, "user_id": "333", "flow_path": "\u670d\u52a1\u4f7f\u7528", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u670d\u52a1\u633a\u591a\u633a\u65b9\u4fbf", "create_time": 1703519546.562767},score:1703519546.5627751
+2023-12-25 23:52:26,563 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 10, "user_id": "333", "flow_path": "\u670d\u52a1\u4f7f\u7528", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u670d\u52a1\u633a\u591a\u633a\u65b9\u4fbf", "create_time": 1703519546.562767},score:1703519546.563434
+2023-12-25 23:52:26,563 RedisHandler.py: INFO: hset key:score_data,data:10,score:{"score": 4, "summary": "\u670d\u52a1\u591a\u800c\u7e41\u7410"}
+2023-12-25 23:52:26,564 Model.py: INFO: cost:0.7050421237945557
+2023-12-25 23:52:32,004 Model.py: INFO: user_qa req content： content='太慢了吧，赶紧给我搞啊' user_id='333' flow_path='报案' scene='意见反馈'
+2023-12-25 23:52:32,005 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:32,766 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 11, "user_id": "333", "flow_path": "\u62a5\u6848", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u592a\u6162\u4e86\u5427\uff0c\u8d76\u7d27\u7ed9\u6211\u641e\u554a", "create_time": 1703519552.766688},score:1703519552.766701
+2023-12-25 23:52:32,768 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 11, "user_id": "333", "flow_path": "\u62a5\u6848", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u592a\u6162\u4e86\u5427\uff0c\u8d76\u7d27\u7ed9\u6211\u641e\u554a", "create_time": 1703519552.766688},score:1703519552.768086
+2023-12-25 23:52:32,768 RedisHandler.py: INFO: hset key:score_data,data:11,score:{"score": 3, "summary": "\u670d\u52a1\u54cd\u5e94\u901f\u5ea6\u6162"}
+2023-12-25 23:52:32,769 Model.py: INFO: cost:0.7642920017242432
+2023-12-25 23:52:38,290 Model.py: INFO: user_qa req content： content='整体还是不错的，就是有一些服务不太好' user_id='333' flow_path='评价' scene='意见反馈'
+2023-12-25 23:52:38,290 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:52:39,087 RedisHandler.py: INFO: set_data_to_z_set key:user_data:333,data:{"record_id": 12, "user_id": "333", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703519559.0869482},score:1703519559.086968
+2023-12-25 23:52:39,088 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 12, "user_id": "333", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u6574\u4f53\u8fd8\u662f\u4e0d\u9519\u7684\uff0c\u5c31\u662f\u6709\u4e00\u4e9b\u670d\u52a1\u4e0d\u592a\u597d", "create_time": 1703519559.0869482},score:1703519559.088208
+2023-12-25 23:52:39,088 RedisHandler.py: INFO: hset key:score_data,data:12,score:{"score": 3, "summary": "\u670d\u52a1\u6709\u4e9b\u4e0d\u597d"}
+2023-12-25 23:52:39,090 Model.py: INFO: cost:0.8001577854156494
+2023-12-25 23:53:39,523 Model.py: INFO: user_qa req content： content='之前有听说过你们这个公司，听说还行，但是都没有买，可以考虑一下' user_id='222' flow_path='触达' scene='电话'
+2023-12-25 23:53:39,525 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:53:40,475 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 93, in user_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-25 23:53:42,203 Model.py: INFO: user_qa req content： content='之前有听说过你们这个公司，听说还行，但是都没有买，可以考虑一下' user_id='222' flow_path='触达' scene='电话'
+2023-12-25 23:53:42,204 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:53:43,128 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 93, in user_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-25 23:53:44,067 Model.py: INFO: user_qa req content： content='之前有听说过你们这个公司，听说还行，但是都没有买，可以考虑一下' user_id='222' flow_path='触达' scene='电话'
+2023-12-25 23:53:44,067 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:53:45,428 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 93, in user_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-25 23:55:38,210 Model.py: INFO: user_qa req content： content='你们公司的保险听说还行，可以考虑一下' user_id='222' flow_path='触达' scene='电话'
+2023-12-25 23:55:38,211 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:55:39,100 RedisHandler.py: INFO: set_data_to_z_set key:user_data:222,data:{"record_id": 13, "user_id": "222", "flow_path": "\u89e6\u8fbe", "scene": "\u7535\u8bdd", "content": "\u4f60\u4eec\u516c\u53f8\u7684\u4fdd\u9669\u542c\u8bf4\u8fd8\u884c\uff0c\u53ef\u4ee5\u8003\u8651\u4e00\u4e0b", "create_time": 1703519739.1004941},score:1703519739.100536
+2023-12-25 23:55:39,102 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 13, "user_id": "222", "flow_path": "\u89e6\u8fbe", "scene": "\u7535\u8bdd", "content": "\u4f60\u4eec\u516c\u53f8\u7684\u4fdd\u9669\u542c\u8bf4\u8fd8\u884c\uff0c\u53ef\u4ee5\u8003\u8651\u4e00\u4e0b", "create_time": 1703519739.1004941},score:1703519739.101994
+2023-12-25 23:55:39,102 RedisHandler.py: INFO: hset key:score_data,data:13,score:{"score": 3, "summary": "\u4e0d\u786e\u5b9a\u662f\u5426\u503c\u5f97\u8d2d\u4e70"}
+2023-12-25 23:55:39,103 Model.py: INFO: cost:0.8934218883514404
+2023-12-25 23:55:55,548 Model.py: INFO: user_qa req content： content='不是，这也太贵了吧，怎么买啊' user_id='222' flow_path='报价' scene='在线客服'
+2023-12-25 23:55:55,548 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:55:56,889 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 93, in user_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-25 23:56:18,837 Model.py: INFO: user_qa req content： content='太贵了，没法下手' user_id='222' flow_path='报价' scene='在线客服'
+2023-12-25 23:56:18,838 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:56:19,537 RedisHandler.py: INFO: set_data_to_z_set key:user_data:222,data:{"record_id": 14, "user_id": "222", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u592a\u8d35\u4e86\uff0c\u6ca1\u6cd5\u4e0b\u624b", "create_time": 1703519779.53702},score:1703519779.537056
+2023-12-25 23:56:19,538 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 14, "user_id": "222", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u592a\u8d35\u4e86\uff0c\u6ca1\u6cd5\u4e0b\u624b", "create_time": 1703519779.53702},score:1703519779.5379279
+2023-12-25 23:56:19,539 RedisHandler.py: INFO: hset key:score_data,data:14,score:{"score": 2, "summary": "\u4ef7\u683c\u9ad8\u6602"}
+2023-12-25 23:56:19,540 Model.py: INFO: cost:0.7026400566101074
+2023-12-25 23:57:17,004 Model.py: INFO: user_qa req content： content='券后价格还是可以接受的，下单了！整个过程还不错' user_id='222' flow_path='支付' scene='意见反馈'
+2023-12-25 23:57:17,005 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:57:17,759 RedisHandler.py: INFO: set_data_to_z_set key:user_data:222,data:{"record_id": 15, "user_id": "222", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5238\u540e\u4ef7\u683c\u8fd8\u662f\u53ef\u4ee5\u63a5\u53d7\u7684\uff0c\u4e0b\u5355\u4e86\uff01\u6574\u4e2a\u8fc7\u7a0b\u8fd8\u4e0d\u9519", "create_time": 1703519837.759211},score:1703519837.759222
+2023-12-25 23:57:17,760 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 15, "user_id": "222", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5238\u540e\u4ef7\u683c\u8fd8\u662f\u53ef\u4ee5\u63a5\u53d7\u7684\uff0c\u4e0b\u5355\u4e86\uff01\u6574\u4e2a\u8fc7\u7a0b\u8fd8\u4e0d\u9519", "create_time": 1703519837.759211},score:1703519837.7602592
+2023-12-25 23:57:17,761 RedisHandler.py: INFO: hset key:score_data,data:15,score:{"score": 3, "summary": "\u4ef7\u683c\u63a5\u53d7\uff0c\u8d2d\u4e70\u6210\u529f"}
+2023-12-25 23:57:17,762 Model.py: INFO: cost:0.7577240467071533
+2023-12-25 23:57:42,823 Model.py: INFO: user_qa req content： content='服务多！平台大！' user_id='222' flow_path='服务使用' scene='意见反馈'
+2023-12-25 23:57:42,824 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:57:43,408 RedisHandler.py: INFO: set_data_to_z_set key:user_data:222,data:{"record_id": 16, "user_id": "222", "flow_path": "\u670d\u52a1\u4f7f\u7528", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u670d\u52a1\u591a\uff01\u5e73\u53f0\u5927\uff01", "create_time": 1703519863.408283},score:1703519863.408303
+2023-12-25 23:57:43,409 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 16, "user_id": "222", "flow_path": "\u670d\u52a1\u4f7f\u7528", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u670d\u52a1\u591a\uff01\u5e73\u53f0\u5927\uff01", "create_time": 1703519863.408283},score:1703519863.409754
+2023-12-25 23:57:43,410 RedisHandler.py: INFO: hset key:score_data,data:16,score:{"score": 4, "summary": ""}
+2023-12-25 23:57:43,411 Model.py: INFO: cost:0.5884511470794678
+2023-12-25 23:58:07,337 Model.py: INFO: user_qa req content： content='哈哈哈，报个案三个月都没人回复，有什么用啊' user_id='222' flow_path='报案' scene='意见反馈'
+2023-12-25 23:58:07,338 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:58:07,988 RedisHandler.py: INFO: set_data_to_z_set key:user_data:222,data:{"record_id": 17, "user_id": "222", "flow_path": "\u62a5\u6848", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u54c8\u54c8\u54c8\uff0c\u62a5\u4e2a\u6848\u4e09\u4e2a\u6708\u90fd\u6ca1\u4eba\u56de\u590d\uff0c\u6709\u4ec0\u4e48\u7528\u554a", "create_time": 1703519887.9880419},score:1703519887.988055
+2023-12-25 23:58:07,989 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 17, "user_id": "222", "flow_path": "\u62a5\u6848", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u54c8\u54c8\u54c8\uff0c\u62a5\u4e2a\u6848\u4e09\u4e2a\u6708\u90fd\u6ca1\u4eba\u56de\u590d\uff0c\u6709\u4ec0\u4e48\u7528\u554a", "create_time": 1703519887.9880419},score:1703519887.9891572
+2023-12-25 23:58:07,990 RedisHandler.py: INFO: hset key:score_data,data:17,score:{"score": 3, "summary": "\u65e0\u54cd\u5e94"}
+2023-12-25 23:58:07,991 Model.py: INFO: cost:0.6542198657989502
+2023-12-25 23:58:20,018 Model.py: INFO: user_qa req content： content='垃圾，真的垃圾' user_id='222' flow_path='评价' scene='意见反馈'
+2023-12-25 23:58:20,018 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:58:20,837 RedisHandler.py: INFO: set_data_to_z_set key:user_data:222,data:{"record_id": 18, "user_id": "222", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5783\u573e\uff0c\u771f\u7684\u5783\u573e", "create_time": 1703519900.8371189},score:1703519900.8371332
+2023-12-25 23:58:20,838 RedisHandler.py: INFO: set_data_to_z_set key:user_data_all,data:{"record_id": 18, "user_id": "222", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5783\u573e\uff0c\u771f\u7684\u5783\u573e", "create_time": 1703519900.8371189},score:1703519900.838324
+2023-12-25 23:58:20,839 RedisHandler.py: INFO: hset key:score_data,data:18,score:{"score": 1, "summary": "\u5783\u573e\u670d\u52a1"}
+2023-12-25 23:58:20,840 Model.py: INFO: cost:0.8220510482788086
+2023-12-25 23:58:27,965 ExperiencePage.py: INFO: /experience/getContent/get_user_list req
+2023-12-25 23:58:27,967 ExperiencePage.py: INFO: res:['111', '222', '333']
+2023-12-25 23:58:27,967 ExperiencePage.py: INFO: cost:0.00185394287109375
+2023-12-25 23:58:29,449 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-25 23:58:29,450 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-25 23:58:29,451 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-25 23:58:29,452 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-25 23:58:29,453 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-25 23:58:29,454 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-25 23:58:29,454 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-25 23:58:29,455 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-25 23:58:29,455 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-25 23:58:29,456 ExperiencePage.py: INFO: cost:0.006396293640136719
+2023-12-25 23:58:35,063 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-25 23:58:35,063 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:58:35,064 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-25 23:58:35,065 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-25 23:58:35,066 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-25 23:58:35,066 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-25 23:58:35,066 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-25 23:58:35,067 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-25 23:58:35,068 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-25 23:58:35,068 ExperiencePage.py: INFO: cost:0.005916118621826172
+2023-12-25 23:58:38,128 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-25 23:58:38,129 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-25 23:58:38,130 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-25 23:58:38,131 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-25 23:58:38,132 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-25 23:58:38,132 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-25 23:58:38,132 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-25 23:58:38,133 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-25 23:58:38,133 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-25 23:58:38,134 ExperiencePage.py: INFO: cost:0.005560874938964844
+2023-12-25 23:58:48,108 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-25 23:58:48,109 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-25 23:58:48,110 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-25 23:58:48,111 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-25 23:58:48,111 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-25 23:58:48,112 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-25 23:58:48,113 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-25 23:58:48,113 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-25 23:58:48,114 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-25 23:58:48,114 ExperiencePage.py: INFO: cost:0.006523847579956055
+2023-12-25 23:58:59,594 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-25 23:58:59,596 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-25 23:58:59,597 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-25 23:58:59,597 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-25 23:58:59,598 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-25 23:58:59,598 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-25 23:58:59,598 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-25 23:58:59,599 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-25 23:58:59,599 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-25 23:58:59,600 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-25 23:58:59,601 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-25 23:58:59,601 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-25 23:58:59,602 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-25 23:58:59,602 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-25 23:58:59,602 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-25 23:58:59,602 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-25 23:58:59,603 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-25 23:58:59,603 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-25 23:58:59,603 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-25 23:58:59,604 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-25 23:58:59,604 ExperiencePage.py: INFO: group_list： [{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大'}, {'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限'}, {'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买'}]
+2023-12-25 23:58:59,604 ExperiencePage.py: INFO: group_list： [{'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂'}]
+2023-12-25 23:58:59,604 ExperiencePage.py: INFO: group_list： [{'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功'}]
+2023-12-25 23:58:59,604 ExperiencePage.py: INFO: group_list： [{'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': ''}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': ''}]
+2023-12-25 23:58:59,605 ExperiencePage.py: INFO: group_list： [{'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应'}]
+2023-12-25 23:58:59,605 ExperiencePage.py: INFO: group_list： [{'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务'}]
+2023-12-25 23:58:59,605 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x1090ab0d0>, <Vo.ExperienceResult object at 0x1090ab110>, <Vo.ExperienceResult object at 0x1090ab190>, <Vo.ExperienceResult object at 0x1090ab1d0>, <Vo.ExperienceResult object at 0x1090ab210>, <Vo.ExperienceResult object at 0x1090ab290>]
+2023-12-25 23:58:59,605 ExperiencePage.py: INFO: cost:0.01107931137084961
+2023-12-25 23:59:11,104 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-25 23:59:11,104 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-25 23:59:11,105 Business.py: INFO: cost:0.0009438991546630859
+2023-12-25 23:59:29,165 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-25 23:59:29,166 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-25 23:59:29,167 Business.py: INFO: cost:0.0013301372528076172
+2023-12-25 23:59:36,733 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-25 23:59:36,734 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-25 23:59:36,734 Business.py: INFO: cost:0.0005290508270263672
+2023-12-26 00:01:00,498 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-26 00:01:00,498 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-26 00:01:00,499 Business.py: INFO: cost:0.0008866786956787109
+2023-12-26 00:01:00,502 Business.py: INFO: /business/getContent req content： module=''
+2023-12-26 00:01:00,502 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-26 00:01:00,508 Business.py: INFO: res:[]
+2023-12-26 00:01:00,509 Business.py: INFO: cost:0.006807088851928711
+2023-12-26 00:01:05,039 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 00:01:05,040 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:01:05,041 Business.py: INFO: res:[]
+2023-12-26 00:01:05,042 Business.py: INFO: cost:0.0026018619537353516
+2023-12-26 00:01:07,124 Business.py: INFO: /business/getContent req content： module='service'
+2023-12-26 00:01:07,125 RedisHandler.py: INFO: get_all_from_z_set key:business_key:service
+2023-12-26 00:01:07,126 Business.py: INFO: res:[]
+2023-12-26 00:01:07,126 Business.py: INFO: cost:0.0019867420196533203
+2023-12-26 00:01:17,661 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 00:01:17,663 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:01:17,664 RedisHandler.py: INFO: set_data_to_z_set key:business_key:seat,data:{"record_id": 18, "user_id": "222", "flow_path": "\u8bc4\u4ef7", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5783\u573e\uff0c\u771f\u7684\u5783\u573e", "create_time": 1703519900.8371189, "score": 1, "summary": "\u5783\u573e\u670d\u52a1", "module": "seat", "moduleName": "\u5750\u5e2d"},score:1703520077.664413
+2023-12-26 00:01:23,412 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 00:01:23,413 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:01:23,414 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 00:01:23,414 Business.py: INFO: cost:0.0021681785583496094
+2023-12-26 00:01:31,981 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 00:01:31,982 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:01:40,927 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 00:01:40,928 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:03:58,473 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 00:03:58,475 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:03:58,477 RedisHandler.py: INFO: set_data_to_z_set key:business_key:seat,data:{"record_id": 14, "user_id": "222", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u592a\u8d35\u4e86\uff0c\u6ca1\u6cd5\u4e0b\u624b", "create_time": 1703519779.53702, "score": 2, "summary": "\u4ef7\u683c\u9ad8\u6602", "module": "seat", "moduleName": "\u5750\u5e2d"},score:1703520238.477157
+2023-12-26 00:04:01,120 Business.py: INFO: /business/pushContent req content： module='service' content={'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}
+2023-12-26 00:04:01,120 RedisHandler.py: INFO: get_all_from_z_set key:business_key:service
+2023-12-26 00:04:01,121 RedisHandler.py: INFO: set_data_to_z_set key:business_key:service,data:{"record_id": 15, "user_id": "222", "flow_path": "\u652f\u4ed8", "scene": "\u610f\u89c1\u53cd\u9988", "content": "\u5238\u540e\u4ef7\u683c\u8fd8\u662f\u53ef\u4ee5\u63a5\u53d7\u7684\uff0c\u4e0b\u5355\u4e86\uff01\u6574\u4e2a\u8fc7\u7a0b\u8fd8\u4e0d\u9519", "create_time": 1703519837.759211, "score": 3, "summary": "\u4ef7\u683c\u63a5\u53d7\uff0c\u8d2d\u4e70\u6210\u529f", "module": "service", "moduleName": "\u670d\u52a1"},score:1703520241.121732
+2023-12-26 00:04:04,153 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 00:04:04,154 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:04:04,154 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 00:04:04,155 Business.py: INFO: cost:0.0016582012176513672
+2023-12-26 00:04:12,701 Business.py: INFO: /business/getContent req content： module='service'
+2023-12-26 00:04:12,701 RedisHandler.py: INFO: get_all_from_z_set key:business_key:service
+2023-12-26 00:04:12,702 Business.py: INFO: res:[{'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}]
+2023-12-26 00:04:12,703 Business.py: INFO: cost:0.001837015151977539
+2023-12-26 00:04:16,180 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 00:04:16,180 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 00:04:16,182 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 00:04:16,182 Business.py: INFO: cost:0.002629995346069336
+2023-12-26 00:04:27,974 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-26 00:04:27,975 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-26 00:04:27,975 Business.py: INFO: cost:0.0011780261993408203
+2023-12-26 00:04:27,977 Business.py: INFO: /business/getContent req content： module=''
+2023-12-26 00:04:27,977 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-26 00:04:27,977 Business.py: INFO: res:[]
+2023-12-26 00:04:27,978 Business.py: INFO: cost:0.0006930828094482422
+2023-12-26 13:45:33,900 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-26 13:45:33,901 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-26 13:45:33,901 Business.py: INFO: cost:0.0015170574188232422
+2023-12-26 13:45:33,906 Business.py: INFO: /business/getContent req content： module=''
+2023-12-26 13:45:33,906 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-26 13:45:33,907 Business.py: INFO: res:[]
+2023-12-26 13:45:33,908 Business.py: INFO: cost:0.00189208984375
+2023-12-26 13:45:59,023 Model.py: INFO: test_qa req content： content='你好'
+2023-12-26 13:46:01,428 Model.py: ERROR: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 65, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 37, in qa
+    print(response.json())
+          ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-26 13:52:53,319 Model.py: INFO: test_qa req content： content='你好'
+2023-12-26 13:52:55,751 Model.py: ERROR: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 65, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 37, in qa
+    print(response.json())
+          ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-26 13:57:51,998 ExperiencePage.py: INFO: /experience/getContent/get_user_list req
+2023-12-26 13:57:52,000 ExperiencePage.py: INFO: res:['111', '222', '333']
+2023-12-26 13:57:52,000 ExperiencePage.py: INFO: cost:0.002218008041381836
+2023-12-26 13:57:53,737 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 13:57:53,737 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 13:57:53,741 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 13:57:53,742 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 13:57:53,742 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 13:57:53,742 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 13:57:53,743 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 13:57:53,743 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 13:57:53,744 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:57:53,744 ExperiencePage.py: INFO: cost:0.006972789764404297
+2023-12-26 13:57:56,787 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 13:57:56,787 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 13:57:56,788 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 13:57:56,789 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 13:57:56,789 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 13:57:56,790 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 13:57:56,791 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 13:57:56,792 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 13:57:56,792 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:57:56,792 ExperiencePage.py: INFO: cost:0.005772113800048828
+2023-12-26 13:57:58,514 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-26 13:57:58,514 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-26 13:57:58,515 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 13:57:58,515 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 13:57:58,516 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 13:57:58,517 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 13:57:58,517 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 13:57:58,517 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 13:57:58,518 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:57:58,518 ExperiencePage.py: INFO: cost:0.004500150680541992
+2023-12-26 13:58:01,579 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-26 13:58:01,580 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-26 13:58:01,581 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 13:58:01,582 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 13:58:01,582 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 13:58:01,582 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 13:58:01,583 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 13:58:01,583 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 13:58:01,584 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 13:58:01,584 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 13:58:01,584 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 13:58:01,584 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 13:58:01,585 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 13:58:01,585 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 13:58:01,585 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 13:58:01,586 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 13:58:01,586 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 13:58:01,586 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 13:58:01,587 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 13:58:01,588 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 13:58:01,588 ExperiencePage.py: INFO: group_list： [{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大'}, {'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限'}, {'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买'}]
+2023-12-26 13:58:01,589 ExperiencePage.py: INFO: group_list： [{'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂'}]
+2023-12-26 13:58:01,589 ExperiencePage.py: INFO: group_list： [{'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功'}]
+2023-12-26 13:58:01,589 ExperiencePage.py: INFO: group_list： [{'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': ''}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': ''}]
+2023-12-26 13:58:01,589 ExperiencePage.py: INFO: group_list： [{'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应'}]
+2023-12-26 13:58:01,590 ExperiencePage.py: INFO: group_list： [{'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务'}]
+2023-12-26 13:58:01,590 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x107960690>, <Vo.ExperienceResult object at 0x1079606d0>, <Vo.ExperienceResult object at 0x107960750>, <Vo.ExperienceResult object at 0x107960790>, <Vo.ExperienceResult object at 0x1079607d0>, <Vo.ExperienceResult object at 0x107960850>]
+2023-12-26 13:58:01,590 ExperiencePage.py: INFO: cost:0.010741949081420898
+2023-12-26 13:58:08,724 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 13:58:08,725 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:58:08,726 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:58:08,726 Business.py: INFO: cost:0.0019659996032714844
+2023-12-26 13:58:15,041 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 13:58:15,041 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 13:58:15,042 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 13:58:15,042 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 13:58:15,043 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 13:58:15,044 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 13:58:15,044 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 13:58:15,045 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 13:58:15,045 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:58:15,045 ExperiencePage.py: INFO: cost:0.004821062088012695
+2023-12-26 13:58:17,222 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 13:58:17,222 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:58:17,223 RedisHandler.py: INFO: set_data_to_z_set key:business_key:seat,data:{"record_id": 2, "user_id": "111", "flow_path": "\u62a5\u4ef7", "scene": "\u5728\u7ebf\u5ba2\u670d", "content": "\u600e\u4e48\u8fd9\u4e48\u8d35\u554a", "create_time": 1703519472.1546109, "score": 3, "summary": "\u4fdd\u8d39\u592a\u8d35", "module": "seat", "moduleName": "\u5750\u5e2d"},score:1703570297.223677
+2023-12-26 13:58:21,374 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 13:58:21,375 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:58:21,376 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:58:21,376 Business.py: INFO: cost:0.0022330284118652344
+2023-12-26 13:59:02,434 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 13:59:02,436 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:59:02,443 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:59:02,443 Business.py: INFO: cost:0.011506080627441406
+2023-12-26 13:59:11,395 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 13:59:11,395 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:59:18,192 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 13:59:18,192 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:59:39,343 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 13:59:39,345 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:59:45,389 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 13:59:45,390 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:59:47,891 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 13:59:47,892 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 13:59:47,893 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 13:59:47,893 Business.py: INFO: cost:0.002051830291748047
+2023-12-26 14:07:20,571 Model.py: INFO: test_qa req content： content='你好'
+2023-12-26 14:07:27,193 Model.py: ERROR: Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 65, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 41, in qa
+    content = json.loads(content)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-26 14:07:50,506 Model.py: INFO: test_qa req content： content='保险真贵'
+2023-12-26 14:07:51,346 Model.py: INFO: res:{'score': 3, 'summary': '保险费用高'}
+2023-12-26 14:07:51,347 Model.py: INFO: cost:0.8407270908355713
+2023-12-26 14:12:42,088 Model.py: INFO: test_qa req content： content='服务流程流畅'
+2023-12-26 14:12:43,392 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-26 14:12:43,393 Model.py: INFO: cost:1.3050780296325684
+2023-12-26 14:13:02,648 Model.py: INFO: test_qa req content： content='你们家保费太贵了'
+2023-12-26 14:13:03,666 Model.py: INFO: res:{'score': 3, 'summary': '保费太贵'}
+2023-12-26 14:13:03,666 Model.py: INFO: cost:1.018712043762207
+2023-12-26 14:13:23,457 Model.py: INFO: test_qa req content： content='服务非常流畅，便捷'
+2023-12-26 14:13:24,146 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-26 14:13:24,146 Model.py: INFO: cost:0.6891510486602783
+2023-12-26 14:14:49,102 Model.py: INFO: test_qa req content： content='响应速度非常快哦'
+2023-12-26 14:14:49,879 Model.py: INFO: res:{'score': 4, 'summary': '服务响应速度快'}
+2023-12-26 14:14:49,880 Model.py: INFO: cost:0.7777628898620605
+2023-12-26 14:22:04,863 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-26 14:22:04,865 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-26 14:22:04,867 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 14:22:04,867 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 14:22:04,868 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 14:22:04,869 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 14:22:04,869 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 14:22:04,870 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 14:22:04,871 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:22:04,872 ExperiencePage.py: INFO: cost:0.008316993713378906
+2023-12-26 14:22:09,124 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 14:22:09,124 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 14:22:09,125 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 14:22:09,126 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 14:22:09,126 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 14:22:09,127 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 14:22:09,127 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 14:22:09,128 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 14:22:09,128 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:22:09,129 ExperiencePage.py: INFO: cost:0.004689931869506836
+2023-12-26 14:22:14,519 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 14:22:14,521 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 14:22:14,522 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 14:22:14,522 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 14:22:14,523 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 14:22:14,523 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 14:22:14,524 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 14:22:14,525 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 14:22:14,526 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:22:14,526 ExperiencePage.py: INFO: cost:0.0067288875579833984
+2023-12-26 14:22:16,136 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-26 14:22:16,137 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-26 14:22:16,137 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 14:22:16,138 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 14:22:16,139 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 14:22:16,139 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 14:22:16,140 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 14:22:16,140 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 14:22:16,141 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:22:16,141 ExperiencePage.py: INFO: cost:0.0045659542083740234
+2023-12-26 14:22:18,684 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 14:22:18,684 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 14:22:18,685 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 14:22:18,685 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 14:22:18,686 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 14:22:18,686 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 14:22:18,687 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 14:22:18,687 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 14:22:18,688 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:22:18,689 ExperiencePage.py: INFO: cost:0.004895925521850586
+2023-12-26 14:22:57,164 Model.py: INFO: test_qa req content： content='好多服务，真好'
+2023-12-26 14:22:58,306 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-26 14:22:58,307 Model.py: INFO: cost:1.1428661346435547
+2023-12-26 14:23:12,540 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:23:13,359 Model.py: INFO: res:{'score': 4, 'summary': 'None'}
+2023-12-26 14:23:13,359 Model.py: INFO: cost:0.8199930191040039
+2023-12-26 14:32:31,223 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:32,056 Model.py: INFO: res:{'score': 3, 'summary': '没有提及任何痛点'}
+2023-12-26 14:32:32,057 Model.py: INFO: cost:0.8338930606842041
+2023-12-26 14:32:37,411 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:38,097 Model.py: INFO: res:{'score': 4, 'summary': '无'}
+2023-12-26 14:32:38,098 Model.py: INFO: cost:0.6872520446777344
+2023-12-26 14:32:38,988 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:39,737 Model.py: INFO: res:{'score': 3, 'summary': '无'}
+2023-12-26 14:32:39,738 Model.py: INFO: cost:0.7492771148681641
+2023-12-26 14:32:40,429 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:41,171 Model.py: INFO: res:{'score': 3, 'summary': '无'}
+2023-12-26 14:32:41,172 Model.py: INFO: cost:0.7425699234008789
+2023-12-26 14:32:41,844 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:42,500 Model.py: INFO: res:{'score': 4, 'summary': 'None'}
+2023-12-26 14:32:42,501 Model.py: INFO: cost:0.6566331386566162
+2023-12-26 14:32:43,219 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:44,007 Model.py: INFO: res:{'score': 4, 'summary': 'None'}
+2023-12-26 14:32:44,008 Model.py: INFO: cost:0.7888789176940918
+2023-12-26 14:32:45,970 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:46,699 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-26 14:32:46,699 Model.py: INFO: cost:0.7289137840270996
+2023-12-26 14:32:47,610 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:48,341 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-26 14:32:48,341 Model.py: INFO: cost:0.7312970161437988
+2023-12-26 14:32:49,816 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:50,490 Model.py: INFO: res:{'score': 3, 'summary': '无'}
+2023-12-26 14:32:50,490 Model.py: INFO: cost:0.6743311882019043
+2023-12-26 14:32:51,404 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:32:52,238 Model.py: INFO: res:{'score': 3, 'summary': '不知道如何使用洗车券'}
+2023-12-26 14:32:52,239 Model.py: INFO: cost:0.8355109691619873
+2023-12-26 14:39:21,490 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:39:22,175 Model.py: INFO: res:{'score': 4, 'summary': ''}
+2023-12-26 14:39:22,176 Model.py: INFO: cost:0.6860389709472656
+2023-12-26 14:39:23,084 Model.py: INFO: test_qa req content： content='买保险还送很多洗车券，真不错'
+2023-12-26 14:39:23,812 Model.py: INFO: res:{'score': 4, 'summary': 'None'}
+2023-12-26 14:39:23,813 Model.py: INFO: cost:0.7288758754730225
+2023-12-26 14:39:46,380 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:39:47,159 Model.py: INFO: res:{'score': 4, 'summary': '优惠多'}
+2023-12-26 14:39:47,160 Model.py: INFO: cost:0.7798099517822266
+2023-12-26 14:39:48,926 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:39:49,925 Model.py: INFO: res:{'score': 4, 'summary': '优惠多'}
+2023-12-26 14:39:49,925 Model.py: INFO: cost:0.9997348785400391
+2023-12-26 14:39:50,801 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:39:51,561 Model.py: INFO: res:{'score': 3, 'summary': '优惠多'}
+2023-12-26 14:39:51,562 Model.py: INFO: cost:0.7608680725097656
+2023-12-26 14:39:52,241 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:39:52,997 Model.py: INFO: res:{'score': 3, 'summary': '优惠多'}
+2023-12-26 14:39:52,998 Model.py: INFO: cost:0.756274938583374
+2023-12-26 14:39:53,682 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:39:54,429 Model.py: INFO: res:{'score': 3, 'summary': '优惠多'}
+2023-12-26 14:39:54,430 Model.py: INFO: cost:0.747870922088623
+2023-12-26 14:39:56,123 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:39:56,887 Model.py: INFO: res:{'score': 3, 'summary': '优惠多'}
+2023-12-26 14:39:56,888 Model.py: INFO: cost:0.7643978595733643
+2023-12-26 14:52:55,284 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:52:56,360 Model.py: INFO: res:{'score': 4, 'summary': '优惠多'}
+2023-12-26 14:52:56,361 Model.py: INFO: cost:1.0767791271209717
+2023-12-26 14:52:57,872 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:52:58,716 Model.py: INFO: res:{'score': 4, 'summary': '优惠多'}
+2023-12-26 14:52:58,717 Model.py: INFO: cost:0.8450450897216797
+2023-12-26 14:52:59,933 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:53:00,824 Model.py: INFO: res:{'score': 3, 'summary': '优惠多'}
+2023-12-26 14:53:00,825 Model.py: INFO: cost:0.8916499614715576
+2023-12-26 14:53:02,448 Model.py: INFO: test_qa req content： content='朋友推荐的保险，优惠很多。'
+2023-12-26 14:53:03,175 Model.py: INFO: res:{'score': 4, 'summary': '优惠多'}
+2023-12-26 14:53:03,175 Model.py: INFO: cost:0.727726936340332
+2023-12-26 14:53:11,676 Model.py: INFO: test_qa req content： content='响应速度非常快。'
+2023-12-26 14:53:12,438 Model.py: INFO: res:{'score': 4, 'summary': '响应速度慢'}
+2023-12-26 14:53:12,439 Model.py: INFO: cost:0.7633070945739746
+2023-12-26 14:53:16,708 Model.py: INFO: test_qa req content： content='响应速度非常快。'
+2023-12-26 14:53:17,557 Model.py: INFO: res:{'score': 4, 'summary': '响应速度慢'}
+2023-12-26 14:53:17,558 Model.py: INFO: cost:0.8502199649810791
+2023-12-26 14:53:19,344 Model.py: INFO: test_qa req content： content='响应速度非常快。'
+2023-12-26 14:53:20,219 Model.py: INFO: res:{'score': 4, 'summary': '响应速度慢'}
+2023-12-26 14:53:20,220 Model.py: INFO: cost:0.8760032653808594
+2023-12-26 14:53:21,015 Model.py: INFO: test_qa req content： content='响应速度非常快。'
+2023-12-26 14:53:21,962 Model.py: INFO: res:{'score': 4, 'summary': '响应速度慢'}
+2023-12-26 14:53:21,963 Model.py: INFO: cost:0.9479959011077881
+2023-12-26 14:53:32,999 Model.py: INFO: test_qa req content： content='响应速度非常快。'
+2023-12-26 14:53:33,736 Model.py: INFO: res:{'score': 4, 'summary': '响应速度慢'}
+2023-12-26 14:53:33,737 Model.py: INFO: cost:0.7381560802459717
+2023-12-26 14:54:56,063 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:54:56,912 Model.py: INFO: res:{'score': 4, 'summary': '朋友推荐保险送洗车券'}
+2023-12-26 14:54:56,912 Model.py: INFO: cost:0.8495371341705322
+2023-12-26 14:54:59,260 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:00,132 Model.py: INFO: res:{'score': 4, 'summary': '送洗车券但无法使用'}
+2023-12-26 14:55:00,133 Model.py: INFO: cost:0.8734278678894043
+2023-12-26 14:55:00,822 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:01,698 Model.py: INFO: res:{'score': 3, 'summary': '送洗车券但无法使用'}
+2023-12-26 14:55:01,699 Model.py: INFO: cost:0.8772790431976318
+2023-12-26 14:55:07,512 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:09,072 Model.py: INFO: res:{'score': 4, 'summary': '送一年洗车券是建立在购买保险的基础上的，如果没有购买保险，就无法获得这个奖励。'}
+2023-12-26 14:55:09,073 Model.py: INFO: cost:1.5611610412597656
+2023-12-26 14:55:23,629 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:24,431 Model.py: INFO: res:{'score': 3, 'summary': '送一年洗车券但无法使用'}
+2023-12-26 14:55:24,432 Model.py: INFO: cost:0.8036739826202393
+2023-12-26 14:55:26,003 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:26,993 Model.py: INFO: res:{'score': 4, 'summary': '送一年洗车券，但不知道使用规则'}
+2023-12-26 14:55:26,994 Model.py: INFO: cost:0.9909179210662842
+2023-12-26 14:55:30,533 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:31,245 Model.py: INFO: res:{'score': 3, 'summary': '未知'}
+2023-12-26 14:55:31,246 Model.py: INFO: cost:0.7125949859619141
+2023-12-26 14:55:36,673 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:37,641 Model.py: INFO: res:{'score': 3, 'summary': '送洗车券但无法使用'}
+2023-12-26 14:55:37,642 Model.py: INFO: cost:0.9691689014434814
+2023-12-26 14:55:39,414 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 14:55:40,303 Model.py: INFO: res:{'score': 3, 'summary': '送洗车券但无法使用'}
+2023-12-26 14:55:40,304 Model.py: INFO: cost:0.8899672031402588
+2023-12-26 14:59:42,835 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 14:59:42,836 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 14:59:42,838 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 14:59:42,839 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 14:59:42,839 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 14:59:42,840 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 14:59:42,841 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 14:59:42,842 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 14:59:42,842 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:59:42,842 ExperiencePage.py: INFO: cost:0.0069277286529541016
+2023-12-26 14:59:44,591 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 14:59:44,592 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 14:59:44,592 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 14:59:44,593 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 14:59:44,593 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 14:59:44,594 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 14:59:44,595 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 14:59:44,596 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 14:59:44,597 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:59:44,597 ExperiencePage.py: INFO: cost:0.005737781524658203
+2023-12-26 14:59:46,792 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-26 14:59:46,793 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-26 14:59:46,794 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 14:59:46,794 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 14:59:46,794 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 14:59:46,795 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 14:59:46,795 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 14:59:46,795 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 14:59:46,796 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:59:46,796 ExperiencePage.py: INFO: cost:0.0038139820098876953
+2023-12-26 14:59:48,444 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 14:59:48,445 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 14:59:48,446 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 14:59:48,447 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 14:59:48,447 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 14:59:48,447 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 14:59:48,448 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 14:59:48,448 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 14:59:48,449 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 14:59:48,449 ExperiencePage.py: INFO: cost:0.005124807357788086
+2023-12-26 15:21:24,087 Model.py: INFO: test_qa req content： content='你们家保费太贵了'
+2023-12-26 15:21:25,257 Model.py: INFO: res:{'score': 3, 'summary': '保费太贵'}
+2023-12-26 15:21:25,257 Model.py: INFO: cost:1.170536994934082
+2023-12-26 15:21:52,829 Model.py: INFO: test_qa req content： content='朋友推荐的保险，还送一年的洗车券'
+2023-12-26 15:21:53,724 Model.py: INFO: res:{'score': 3, 'summary': '没有提到具体痛点'}
+2023-12-26 15:21:53,724 Model.py: INFO: cost:0.8949198722839355
+2023-12-26 15:22:41,278 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的一年的洗车券但是没法用'
+2023-12-26 15:22:42,161 Model.py: INFO: res:{'score': 3, 'summary': '送的一年洗车券没法用'}
+2023-12-26 15:22:42,161 Model.py: INFO: cost:0.8828480243682861
+2023-12-26 15:22:46,859 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的一年的洗车券但是没法用'
+2023-12-26 15:22:47,998 Model.py: INFO: res:{'score': 3, 'summary': '送的一年洗车券没法用'}
+2023-12-26 15:22:47,999 Model.py: INFO: cost:1.1394758224487305
+2023-12-26 15:22:49,615 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的一年的洗车券但是没法用'
+2023-12-26 15:22:50,394 Model.py: INFO: res:{'score': 4, 'summary': '不能用洗车券'}
+2023-12-26 15:22:50,394 Model.py: INFO: cost:0.7792670726776123
+2023-12-26 15:22:51,561 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的一年的洗车券但是没法用'
+2023-12-26 15:22:52,708 Model.py: INFO: res:{'score': 4, 'summary': '送的一年洗车券没法用'}
+2023-12-26 15:22:52,708 Model.py: INFO: cost:1.1473736763000488
+2023-12-26 15:22:53,912 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的一年的洗车券但是没法用'
+2023-12-26 15:22:54,967 Model.py: INFO: res:{'score': 4, 'summary': '不能使用洗车券'}
+2023-12-26 15:22:54,967 Model.py: INFO: cost:1.0558149814605713
+2023-12-26 15:23:04,388 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的八年的洗车券但是没法用'
+2023-12-26 15:23:05,345 Model.py: INFO: res:{'score': 3, 'summary': '送的八年的洗车券 but没法用'}
+2023-12-26 15:23:05,346 Model.py: INFO: cost:0.9580011367797852
+2023-12-26 15:23:13,650 Model.py: INFO: test_qa req content： content='笑死，朋友推荐的保险，送的82年的洗车券但是没法用'
+2023-12-26 15:23:14,622 Model.py: INFO: res:{'score': 4, 'summary': '送的洗车券没法用'}
+2023-12-26 15:23:14,622 Model.py: INFO: cost:0.9721770286560059
+2023-12-26 15:23:55,580 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 15:23:55,581 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 15:23:55,582 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 15:23:55,583 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 15:23:55,584 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 15:23:55,585 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 15:23:55,586 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 15:23:55,586 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 15:23:55,587 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 15:23:55,587 ExperiencePage.py: INFO: cost:0.007019996643066406
+2023-12-26 15:23:58,339 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-26 15:23:58,339 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-26 15:23:58,341 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 15:23:58,342 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 15:23:58,342 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 15:23:58,343 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 15:23:58,343 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 15:23:58,343 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 15:23:58,344 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 15:23:58,344 ExperiencePage.py: INFO: cost:0.005360126495361328
+2023-12-26 15:24:10,469 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 15:24:10,469 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 15:24:10,470 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 15:24:10,471 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 15:24:10,471 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 15:24:10,472 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 15:24:10,473 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 15:24:10,474 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 15:24:10,475 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 15:24:10,475 ExperiencePage.py: INFO: cost:0.0063898563385009766
+2023-12-26 15:24:12,622 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 15:24:12,623 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 15:24:12,623 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 15:24:12,624 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 15:24:12,624 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 15:24:12,625 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 15:24:12,625 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 15:24:12,625 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 15:24:12,626 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 15:24:12,626 ExperiencePage.py: INFO: cost:0.004422187805175781
+2023-12-26 15:24:24,707 Business.py: INFO: /business/pushContent req content： module='seat' content={'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}
+2023-12-26 15:24:24,708 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 15:24:53,513 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-26 15:24:53,515 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-26 15:24:53,516 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 15:24:53,516 Business.py: INFO: cost:0.0033409595489501953
+2023-12-26 15:24:55,953 Business.py: INFO: /business/getContent req content： module='service'
+2023-12-26 15:24:55,953 RedisHandler.py: INFO: get_all_from_z_set key:business_key:service
+2023-12-26 15:24:55,954 Business.py: INFO: res:[{'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}]
+2023-12-26 15:24:55,955 Business.py: INFO: cost:0.0021309852600097656
+2023-12-26 15:36:44,512 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-26 15:36:44,512 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-26 15:36:44,513 Business.py: INFO: cost:0.001260995864868164
+2023-12-26 15:36:44,518 Business.py: INFO: /business/getContent req content： module=''
+2023-12-26 15:36:44,518 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-26 15:36:44,519 Business.py: INFO: res:[]
+2023-12-26 15:36:44,520 Business.py: INFO: cost:0.0015881061553955078
+2023-12-26 18:53:34,609 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-26 18:53:34,610 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-26 18:53:34,611 Business.py: INFO: cost:0.002435922622680664
+2023-12-26 18:53:34,616 Business.py: INFO: /business/getContent req content： module=''
+2023-12-26 18:53:34,616 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-26 18:53:34,617 Business.py: INFO: res:[]
+2023-12-26 18:53:34,617 Business.py: INFO: cost:0.0017919540405273438
+2023-12-26 18:53:46,042 ExperiencePage.py: INFO: /experience/getContent/get_user_list req
+2023-12-26 18:53:46,042 ExperiencePage.py: INFO: res:['111', '222', '333']
+2023-12-26 18:53:46,042 ExperiencePage.py: INFO: cost:0.0005860328674316406
+2023-12-26 18:53:48,042 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 18:53:48,043 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 18:53:48,044 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 18:53:48,044 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 18:53:48,045 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 18:53:48,045 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 18:53:48,045 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 18:53:48,045 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 18:53:48,046 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 18:53:48,046 ExperiencePage.py: INFO: cost:0.003954172134399414
+2023-12-26 18:54:23,439 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-26 18:54:23,439 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-26 18:54:23,440 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 18:54:23,440 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 18:54:23,441 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 18:54:23,441 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 18:54:23,441 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 18:54:23,442 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 18:54:23,442 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 18:54:23,442 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 18:54:23,443 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 18:54:23,443 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 18:54:23,443 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 18:54:23,443 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 18:54:23,444 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 18:54:23,444 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 18:54:23,444 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 18:54:23,445 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 18:54:23,445 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 18:54:23,445 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 18:54:23,446 ExperiencePage.py: INFO: group_list： [{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大'}, {'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限'}, {'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买'}]
+2023-12-26 18:54:23,446 ExperiencePage.py: INFO: group_list： [{'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂'}]
+2023-12-26 18:54:23,446 ExperiencePage.py: INFO: group_list： [{'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功'}]
+2023-12-26 18:54:23,446 ExperiencePage.py: INFO: group_list： [{'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': ''}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': ''}]
+2023-12-26 18:54:23,446 ExperiencePage.py: INFO: group_list： [{'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应'}]
+2023-12-26 18:54:23,446 ExperiencePage.py: INFO: group_list： [{'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务'}]
+2023-12-26 18:54:23,447 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x10a54c390>, <Vo.ExperienceResult object at 0x10a54c3d0>, <Vo.ExperienceResult object at 0x10a54c450>, <Vo.ExperienceResult object at 0x10a54c490>, <Vo.ExperienceResult object at 0x10a54c4d0>, <Vo.ExperienceResult object at 0x10a54c550>]
+2023-12-26 18:54:23,447 ExperiencePage.py: INFO: cost:0.008044004440307617
+2023-12-26 18:56:11,775 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-26 18:56:11,776 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-26 18:56:11,776 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-26 18:56:11,777 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-26 18:56:11,778 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-26 18:56:11,778 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-26 18:56:11,779 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-26 18:56:11,780 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-26 18:56:11,780 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 18:56:11,781 ExperiencePage.py: INFO: cost:0.005669116973876953
+2023-12-26 18:56:14,515 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='333'
+2023-12-26 18:56:14,515 RedisHandler.py: INFO: get_all_from_z_set key:user_data:333
+2023-12-26 18:56:14,516 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-26 18:56:14,517 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-26 18:56:14,517 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-26 18:56:14,518 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-26 18:56:14,518 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-26 18:56:14,519 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-26 18:56:14,519 ExperiencePage.py: INFO: res:[{'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐', 'module': 'service', 'moduleName': '服务'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 18:56:14,519 ExperiencePage.py: INFO: cost:0.0044689178466796875
+2023-12-26 18:56:16,662 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-26 18:56:16,663 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-26 18:56:16,663 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-26 18:56:16,664 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-26 18:56:16,664 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-26 18:56:16,664 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-26 18:56:16,665 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-26 18:56:16,666 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-26 18:56:16,667 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-26 18:56:16,667 ExperiencePage.py: INFO: cost:0.004763126373291016
+2023-12-26 18:56:28,726 Model.py: INFO: test_qa req content： content='保费太贵了'
+2023-12-26 18:56:32,329 Model.py: ERROR: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 65, in test_qa
+    res_data = qa(req.content)
+               ^^^^^^^^^^^^^^^
+  File "/Users/xianjiacheng/PycharmProjects/experiencemap/Model.py", line 37, in qa
+    print(response.json())
+          ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2023-12-26 19:00:05,674 Model.py: INFO: test_qa req content： content='保费太贵了'
+2023-12-26 19:00:11,678 Model.py: INFO: res:{'score': 3, 'summary': '保费太贵'}
+2023-12-26 19:00:11,680 Model.py: INFO: cost:6.006460905075073
+2023-12-29 11:28:04,458 ExperiencePage.py: INFO: /experience/getContent/get_user_list req
+2023-12-29 11:28:04,462 ExperiencePage.py: INFO: res:['111', '222', '333']
+2023-12-29 11:28:04,463 ExperiencePage.py: INFO: cost:0.0050199031829833984
+2023-12-29 11:28:07,483 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2023-12-29 11:28:07,484 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2023-12-29 11:28:07,488 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-29 11:28:07,488 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-29 11:28:07,489 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-29 11:28:07,489 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-29 11:28:07,490 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-29 11:28:07,490 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-29 11:28:07,491 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-29 11:28:07,492 ExperiencePage.py: INFO: cost:0.008536100387573242
+2023-12-29 11:28:44,661 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='222'
+2023-12-29 11:28:44,663 RedisHandler.py: INFO: get_all_from_z_set key:user_data:222
+2023-12-29 11:28:44,665 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-29 11:28:44,665 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-29 11:28:44,666 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-29 11:28:44,666 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-29 11:28:44,666 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-29 11:28:44,666 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-29 11:28:44,667 ExperiencePage.py: INFO: res:[{'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-29 11:28:44,667 ExperiencePage.py: INFO: cost:0.005780935287475586
+2023-12-29 11:30:17,387 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2023-12-29 11:30:17,388 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2023-12-29 11:30:17,388 RedisHandler.py: INFO: hget key:score_data,data:1
+2023-12-29 11:30:17,389 RedisHandler.py: INFO: hget key:score_data,data:2
+2023-12-29 11:30:17,389 RedisHandler.py: INFO: hget key:score_data,data:3
+2023-12-29 11:30:17,390 RedisHandler.py: INFO: hget key:score_data,data:4
+2023-12-29 11:30:17,390 RedisHandler.py: INFO: hget key:score_data,data:5
+2023-12-29 11:30:17,390 RedisHandler.py: INFO: hget key:score_data,data:6
+2023-12-29 11:30:17,390 RedisHandler.py: INFO: hget key:score_data,data:7
+2023-12-29 11:30:17,391 RedisHandler.py: INFO: hget key:score_data,data:8
+2023-12-29 11:30:17,391 RedisHandler.py: INFO: hget key:score_data,data:9
+2023-12-29 11:30:17,391 RedisHandler.py: INFO: hget key:score_data,data:10
+2023-12-29 11:30:17,392 RedisHandler.py: INFO: hget key:score_data,data:11
+2023-12-29 11:30:17,392 RedisHandler.py: INFO: hget key:score_data,data:12
+2023-12-29 11:30:17,393 RedisHandler.py: INFO: hget key:score_data,data:13
+2023-12-29 11:30:17,393 RedisHandler.py: INFO: hget key:score_data,data:14
+2023-12-29 11:30:17,394 RedisHandler.py: INFO: hget key:score_data,data:15
+2023-12-29 11:30:17,394 RedisHandler.py: INFO: hget key:score_data,data:16
+2023-12-29 11:30:17,395 RedisHandler.py: INFO: hget key:score_data,data:17
+2023-12-29 11:30:17,395 RedisHandler.py: INFO: hget key:score_data,data:18
+2023-12-29 11:30:17,396 ExperiencePage.py: INFO: group_list： [{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大'}, {'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限'}, {'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买'}]
+2023-12-29 11:30:17,396 ExperiencePage.py: INFO: group_list： [{'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂'}]
+2023-12-29 11:30:17,396 ExperiencePage.py: INFO: group_list： [{'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功'}]
+2023-12-29 11:30:17,396 ExperiencePage.py: INFO: group_list： [{'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': ''}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': ''}]
+2023-12-29 11:30:17,396 ExperiencePage.py: INFO: group_list： [{'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应'}]
+2023-12-29 11:30:17,396 ExperiencePage.py: INFO: group_list： [{'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务'}]
+2023-12-29 11:30:17,397 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x10a54e450>, <Vo.ExperienceResult object at 0x10a54e490>, <Vo.ExperienceResult object at 0x10a54e4d0>, <Vo.ExperienceResult object at 0x10a54e510>, <Vo.ExperienceResult object at 0x10a54e550>, <Vo.ExperienceResult object at 0x10a54e5d0>]
+2023-12-29 11:30:17,397 ExperiencePage.py: INFO: cost:0.009634733200073242
+2023-12-29 11:48:52,040 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-29 11:48:52,042 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-29 11:48:52,042 Business.py: INFO: cost:0.002427816390991211
+2023-12-29 11:48:52,047 Business.py: INFO: /business/getContent req content： module=''
+2023-12-29 11:48:52,047 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-29 11:48:52,049 Business.py: INFO: res:[]
+2023-12-29 11:48:52,049 Business.py: INFO: cost:0.0021026134490966797
+2023-12-29 11:48:55,126 Business.py: INFO: /business/getContent req content： module='seat'
+2023-12-29 11:48:55,126 RedisHandler.py: INFO: get_all_from_z_set key:business_key:seat
+2023-12-29 11:48:55,127 Business.py: INFO: res:[{'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}]
+2023-12-29 11:48:55,128 Business.py: INFO: cost:0.002212047576904297
+2023-12-29 11:49:54,162 Business.py: INFO: /business/getContent req content： module='service'
+2023-12-29 11:49:54,163 RedisHandler.py: INFO: get_all_from_z_set key:business_key:service
+2023-12-29 11:49:54,164 Business.py: INFO: res:[{'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功', 'module': 'service', 'moduleName': '服务'}]
+2023-12-29 11:49:54,165 Business.py: INFO: cost:0.0034449100494384766
+2023-12-29 11:56:38,908 Business.py: INFO: /experience/getContent/getModuleList req
+2023-12-29 11:56:38,910 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2023-12-29 11:56:38,910 Business.py: INFO: cost:0.0018808841705322266
+2023-12-29 11:56:38,914 Business.py: INFO: /business/getContent req content： module=''
+2023-12-29 11:56:38,914 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2023-12-29 11:56:38,915 Business.py: INFO: res:[]
+2023-12-29 11:56:38,915 Business.py: INFO: cost:0.001283884048461914
+2024-01-08 18:59:00,992 Business.py: INFO: /experience/getContent/getModuleList req
+2024-01-08 18:59:00,992 Business.py: INFO: res:[{'module': 'seat', 'moduleName': '坐席'}, {'module': 'service', 'moduleName': '服务'}, {'module': 'claim', 'moduleName': '理赔'}, {'module': 'pay', 'moduleName': '收银台'}]
+2024-01-08 18:59:00,993 Business.py: INFO: cost:0.0012459754943847656
+2024-01-08 18:59:00,997 Business.py: INFO: /business/getContent req content： module=''
+2024-01-08 18:59:00,998 RedisHandler.py: INFO: get_all_from_z_set key:business_key:
+2024-01-08 18:59:01,003 Business.py: INFO: res:[]
+2024-01-08 18:59:01,003 Business.py: INFO: cost:0.005838155746459961
+2024-01-08 18:59:14,568 Model.py: INFO: test_qa req content： content='你这个平台是真的垃圾'
+2024-01-08 18:59:15,503 Model.py: INFO: res:{'score': 1, 'summary': '平台真垃圾'}
+2024-01-08 18:59:15,504 Model.py: INFO: cost:0.9363799095153809
+2024-01-08 18:59:20,679 ExperiencePage.py: INFO: /experience/getContent/get_user_list req
+2024-01-08 18:59:20,679 ExperiencePage.py: INFO: res:['111', '222', '333']
+2024-01-08 18:59:20,679 ExperiencePage.py: INFO: cost:0.000720977783203125
+2024-01-08 18:59:21,726 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id=''
+2024-01-08 18:59:21,727 RedisHandler.py: INFO: get_all_from_z_set key:user_data_all
+2024-01-08 18:59:21,728 RedisHandler.py: INFO: hget key:score_data,data:1
+2024-01-08 18:59:21,729 RedisHandler.py: INFO: hget key:score_data,data:2
+2024-01-08 18:59:21,729 RedisHandler.py: INFO: hget key:score_data,data:3
+2024-01-08 18:59:21,729 RedisHandler.py: INFO: hget key:score_data,data:4
+2024-01-08 18:59:21,730 RedisHandler.py: INFO: hget key:score_data,data:5
+2024-01-08 18:59:21,730 RedisHandler.py: INFO: hget key:score_data,data:6
+2024-01-08 18:59:21,730 RedisHandler.py: INFO: hget key:score_data,data:7
+2024-01-08 18:59:21,731 RedisHandler.py: INFO: hget key:score_data,data:8
+2024-01-08 18:59:21,731 RedisHandler.py: INFO: hget key:score_data,data:9
+2024-01-08 18:59:21,731 RedisHandler.py: INFO: hget key:score_data,data:10
+2024-01-08 18:59:21,732 RedisHandler.py: INFO: hget key:score_data,data:11
+2024-01-08 18:59:21,732 RedisHandler.py: INFO: hget key:score_data,data:12
+2024-01-08 18:59:21,732 RedisHandler.py: INFO: hget key:score_data,data:13
+2024-01-08 18:59:21,733 RedisHandler.py: INFO: hget key:score_data,data:14
+2024-01-08 18:59:21,734 RedisHandler.py: INFO: hget key:score_data,data:15
+2024-01-08 18:59:21,734 RedisHandler.py: INFO: hget key:score_data,data:16
+2024-01-08 18:59:21,735 RedisHandler.py: INFO: hget key:score_data,data:17
+2024-01-08 18:59:21,735 RedisHandler.py: INFO: hget key:score_data,data:18
+2024-01-08 18:59:21,736 ExperiencePage.py: INFO: group_list： [{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大'}, {'record_id': 7, 'user_id': '333', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好小啊', 'create_time': 1703519520.304328, 'score': 3, 'summary': '平台太小，选择有限'}, {'record_id': 13, 'user_id': '222', 'flow_path': '触达', 'scene': '电话', 'content': '你们公司的保险听说还行，可以考虑一下', 'create_time': 1703519739.1004941, 'score': 3, 'summary': '不确定是否值得购买'}]
+2024-01-08 18:59:21,736 ExperiencePage.py: INFO: group_list： [{'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵'}, {'record_id': 8, 'user_id': '333', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么便宜', 'create_time': 1703519526.7324102, 'score': 3, 'summary': '价格低廉可能引发质量担忧'}, {'record_id': 14, 'user_id': '222', 'flow_path': '报价', 'scene': '在线客服', 'content': '太贵了，没法下手', 'create_time': 1703519779.53702, 'score': 2, 'summary': '价格高昂'}]
+2024-01-08 18:59:21,736 ExperiencePage.py: INFO: group_list： [{'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂'}, {'record_id': 9, 'user_id': '333', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519538.894151, 'score': 3, 'summary': '流程复杂'}, {'record_id': 15, 'user_id': '222', 'flow_path': '支付', 'scene': '意见反馈', 'content': '券后价格还是可以接受的，下单了！整个过程还不错', 'create_time': 1703519837.759211, 'score': 3, 'summary': '价格接受，购买成功'}]
+2024-01-08 18:59:21,737 ExperiencePage.py: INFO: group_list： [{'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': ''}, {'record_id': 10, 'user_id': '333', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务挺多挺方便', 'create_time': 1703519546.562767, 'score': 4, 'summary': '服务多而繁琐'}, {'record_id': 16, 'user_id': '222', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '服务多！平台大！', 'create_time': 1703519863.408283, 'score': 4, 'summary': ''}]
+2024-01-08 18:59:21,737 ExperiencePage.py: INFO: group_list： [{'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 11, 'user_id': '333', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519552.766688, 'score': 3, 'summary': '服务响应速度慢'}, {'record_id': 17, 'user_id': '222', 'flow_path': '报案', 'scene': '意见反馈', 'content': '哈哈哈，报个案三个月都没人回复，有什么用啊', 'create_time': 1703519887.9880419, 'score': 3, 'summary': '无响应'}]
+2024-01-08 18:59:21,737 ExperiencePage.py: INFO: group_list： [{'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般'}, {'record_id': 12, 'user_id': '333', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519559.0869482, 'score': 3, 'summary': '服务有些不好'}, {'record_id': 18, 'user_id': '222', 'flow_path': '评价', 'scene': '意见反馈', 'content': '垃圾，真的垃圾', 'create_time': 1703519900.8371189, 'score': 1, 'summary': '垃圾服务'}]
+2024-01-08 18:59:21,737 ExperiencePage.py: INFO: res:[<Vo.ExperienceResult object at 0x106228590>, <Vo.ExperienceResult object at 0x1062285d0>, <Vo.ExperienceResult object at 0x106228650>, <Vo.ExperienceResult object at 0x106228690>, <Vo.ExperienceResult object at 0x1062286d0>, <Vo.ExperienceResult object at 0x106228750>]
+2024-01-08 18:59:21,737 ExperiencePage.py: INFO: cost:0.011450052261352539
+2024-01-08 18:59:37,094 ExperiencePage.py: INFO: /experience/getContent/personal req content： user_id='111'
+2024-01-08 18:59:37,095 RedisHandler.py: INFO: get_all_from_z_set key:user_data:111
+2024-01-08 18:59:37,095 RedisHandler.py: INFO: hget key:score_data,data:1
+2024-01-08 18:59:37,096 RedisHandler.py: INFO: hget key:score_data,data:2
+2024-01-08 18:59:37,097 RedisHandler.py: INFO: hget key:score_data,data:3
+2024-01-08 18:59:37,097 RedisHandler.py: INFO: hget key:score_data,data:4
+2024-01-08 18:59:37,097 RedisHandler.py: INFO: hget key:score_data,data:5
+2024-01-08 18:59:37,098 RedisHandler.py: INFO: hget key:score_data,data:6
+2024-01-08 18:59:37,099 ExperiencePage.py: INFO: res:[{'record_id': 1, 'user_id': '111', 'flow_path': '触达', 'scene': '电话', 'content': '你们这个平台好大啊', 'create_time': 1703519464.4878201, 'score': 4, 'summary': '平台大', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 2, 'user_id': '111', 'flow_path': '报价', 'scene': '在线客服', 'content': '怎么这么贵啊', 'create_time': 1703519472.1546109, 'score': 3, 'summary': '保费太贵', 'module': 'seat', 'moduleName': '坐席'}, {'record_id': 3, 'user_id': '111', 'flow_path': '支付', 'scene': '意见反馈', 'content': '这个流程也太复杂了', 'create_time': 1703519479.796837, 'score': 3, 'summary': '流程复杂', 'module': 'service', 'moduleName': '服务'}, {'record_id': 4, 'user_id': '111', 'flow_path': '服务使用', 'scene': '意见反馈', 'content': '好多服务，真好', 'create_time': 1703519493.9443069, 'score': 4, 'summary': '', 'module': 'service', 'moduleName': '服务'}, {'record_id': 5, 'user_id': '111', 'flow_path': '报案', 'scene': '意见反馈', 'content': '太慢了吧，赶紧给我搞啊', 'create_time': 1703519505.2973812, 'score': 3, 'summary': '服务响应速度慢', 'module': 'claim', 'moduleName': '理赔'}, {'record_id': 6, 'user_id': '111', 'flow_path': '评价', 'scene': '意见反馈', 'content': '整体还是不错的，就是有一些服务不太好', 'create_time': 1703519512.464894, 'score': 3, 'summary': '服务体验一般', 'module': 'seat', 'moduleName': '坐席'}]
+2024-01-08 18:59:37,099 ExperiencePage.py: INFO: cost:0.00495600700378418
+2024-01-08 19:10:43,695 ExperiencePage.py: INFO: /experience/getContent/get_user_list req
+2024-01-08 19:10:43,696 ExperiencePage.py: INFO: res:['111', '222', '333']
+2024-01-08 19:10:43,696 ExperiencePage.py: INFO: cost:0.0014691352844238281

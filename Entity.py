@@ -19,6 +19,7 @@ class Score:
 
 
 # 推送给业务方的内容
+#{"record_id":"1","user_id":"111","flow_path":"附近的卡上了","scene":"fjdla","content":"reqvc","score":"1","summary":"fd","create_time":"fda"}
 class PushContent:
     def __init__(self, module, record_id, user_id, flow_path, scene, content, score, summary, create_time):
         self.module = module  # 模块
